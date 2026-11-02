@@ -14,26 +14,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        colors: {
-          dark: {
-            bg: '#080C14',        /* Deep Midnight Navy (Standard black se zyaada premium) */
-            card: '#0F172A',      /* Dark slate cards */
-            border: '#1E293B',    /* Subtle border line color */
-            muted: '#64748B'
-          },
-          brand: {
-            400: '#22D3EE',      /* Bright Cyan glow */
-            500: '#06B6D4',      /* Main Neon Cyan accent */
-            600: '#0891B2',
-          }
+ tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        dark: {
+          bg: '#050508',      /* Deep obsidian black */
+          card: '#0c0a16',    /* Dark purple-tinted card background */
+          border: '#27272a',  /* Dark border */
+          muted: '#a1a1aa'
+        },
+        brand: {
+          400: '#c084fc',     /* Light purple neon */
+          500: '#a855f7',     /* Main Neon Purple accent */
+          600: '#9333ea',     /* Deep purple */
         }
       }
     }
   }
+}
 </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap');
@@ -722,182 +722,6 @@ body {
 
   </div>
 </section>
-
-  <!-- Achievements & Activities Section -->
-  <!-- Certifications & Credentials Section -->
-<section id="certifications" class="py-20 border-t border-dark-border bg-dark-bg/50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-      <div>
-        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Verified Qualifications</h2>
-        <p class="text-3xl font-extrabold text-white">Certifications & Credentials</p>
-      </div>
-      <p class="text-slate-400 text-sm mt-2 md:mt-0 max-w-md">
-        All certificates are verifiable. Click any credential below to view the official verification link.
-      </p>
-    </div>
-
-    <!-- 3-Column Grid Layout for Certifications -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-
-      <!-- Certificate 1: Cisco Intro to Networks -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
-              <i class="fa-solid fa-network-wired text-lg"></i>
-            </div>
-            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Cisco Academy</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Introduction to Networks</h3>
-          <p class="text-slate-400 text-sm mb-6">CISCO Networking Academy credential covering core networking concepts and topologies.</p>
-        </div>
-        <div>
-          <a href="https://drive.google.com/file/d/1gbRicCoal4VX9XMYa7rBIBkWEO6DuKlE/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
-          </a>
-        </div>
-      </div>
-
-      <!-- Certificate 2: IBM SkillsBuild LLM -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-              <i class="fa-solid fa-brain text-lg"></i>
-            </div>
-            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">IBM SkillsBuild</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Introduction to Large Language Models</h3>
-          <p class="text-slate-400 text-sm mb-6">Completed structured modules on foundational LLM architectures and generative applications.</p>
-        </div>
-        <div>
-          <a href="https://drive.google.com/file/d/1gWVw1Z0gevwWj7pNRRZ2m0elnhzjbpmX/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
-          </a>
-        </div>
-      </div>
-
-      <!-- Certificate 3: Cisco Python Essentials 1 -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-              <i class="fa-brands fa-python text-lg"></i>
-            </div>
-            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Cisco Academy</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Python Essentials 1</h3>
-          <p class="text-slate-400 text-sm mb-6">Foundational Python programming syntax, data types, and logical control structures.</p>
-        </div>
-        <div>
-          <a href="https://drive.google.com/file/d/1UV8Hh8E4kBvLyNS2Cx-Zy1hA3Z8RIXWb/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
-          </a>
-        </div>
-      </div>
-
-      <!-- Certificate 4: Spoken Tutorial C-Training -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-              <i class="fa-solid fa-terminal text-lg"></i>
-            </div>
-            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Spoken Tutorial</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">C-Training</h3>
-          <p class="text-slate-400 text-sm mb-6">Completed training and assessment in procedural programming using C language.</p>
-        </div>
-        <div>
-          <a href="https://drive.google.com/file/d/1nBVVQEBa7iOSqgH9oZ60-SKLMl5wxtaQ/view?usp=drivesdk" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
-          </a>
-        </div>
-      </div>
-
-      <!-- Certificate 5: Spoken Tutorial HTML -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400">
-              <i class="fa-solid fa-code text-lg"></i>
-            </div>
-            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Spoken Tutorial</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">HTML Web Development</h3>
-          <p class="text-slate-400 text-sm mb-6">Trained in structuring modern web pages using HTML markup fundamentals.</p>
-        </div>
-        <div>
-          <a href="https://drive.google.com/file/d/1XC6U5VlKLj6yG2r2hxbhZ9zGUE06u0Hv/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
-          </a>
-        </div>
-      </div>
-
-      <!-- Certificate 6: Spoken Tutorial Python 3.4.3 -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-              <i class="fa-brands fa-python text-lg"></i>
-            </div>
-            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Spoken Tutorial</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Python 3.4.3 Certification</h3>
-          <p class="text-slate-400 text-sm mb-6">Completed formal course curriculum and test evaluation in Python scripting.</p>
-        </div>
-        <div>
-          <a href="https://drive.google.com/file/d/1gYOcpRLYnFUQKkhgQv3fft5LRmGnq7pe/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
-          </a>
-        </div>
-      </div>
-
-      <!-- Certificate 7: NPTEL Soft Skills -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
-              <i class="fa-solid fa-award text-lg"></i>
-            </div>
-            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">NPTEL Certification</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">NPTEL Soft Skills</h3>
-          <p class="text-slate-400 text-sm mb-6">Professional certification focusing on communication, interpersonal, and corporate skills.</p>
-        </div>
-        <div>
-          <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/109/noc25-hs159/Course/NPTEL25HS159S46610158410879711.pdf" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
-          </a>
-        </div>
-      </div>
-
-      <!-- Certificate 8: GradGuru Innovation -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
-              <i class="fa-solid fa-chalkboard-user text-lg"></i>
-            </div>
-            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">GradGuru Innovation</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Career Guidance Webinar</h3>
-          <p class="text-slate-400 text-sm mb-6">Participated in expert career development and professional growth seminar sessions.</p>
-        </div>
-        <div>
-          <a href="https://drive.google.com/file/d/1i9UQoYzJjJTXdjTpxGO_CS0KMC1hLkWe/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-   
-
 <!-- Achievements & Extracurriculars Section (Core Honors) -->
 <section id="achievements" class="py-20 border-t border-dark-border bg-dark-bg/50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
