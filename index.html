@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD SHAHID | Developer & AI/ML Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          dark: {
+            bg: '#080C14',        /* Deep Midnight Navy (Standard black se zyaada premium) */
+            card: '#0F172A',      /* Dark slate cards */
+            border: '#1E293B',    /* Subtle border line color */
+            muted: '#64748B'
+          },
+          brand: {
+            400: '#22D3EE',      /* Bright Cyan glow */
+            500: '#06B6D4',      /* Main Neon Cyan accent */
+            600: '#0891B2',
+          }
+        }
+      }
+    }
+  }
+</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #080C14;
+  color: #F8FAFC;
+}
+
+/* Subtle aesthetic background grid pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Glassmorphism Card Effect */
+.glass-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* Hover Glow on Cards */
+.glass-card:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080C14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06B6D4;
+}
+    html {
+      scroll-behavior: smooth;
+    }
+    .glow-effect {
+      box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.25);
+    }
+    .glow-effect:hover {
+      box-shadow: 0 0 30px 2px rgba(56, 189, 248, 0.4);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0b0f17;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #38bdf8;
+    }
+  </style>
+</head>
+<body class="bg-dark-bg text-slate-100 bg-grid-pattern selection:bg-brand-500 selection:text-white"></body>
+
+  <!-- Floating Navigation -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-dark-bg/80 backdrop-blur-md border-b border-dark-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#about" class="text-xl font-bold text-white tracking-wide flex items-center gap-2">
+       <img src="portfoliologo.jpeg" alt="MD Shahid" class="w-8 h-8 rounded-lg object-cover shadow-lg shadow-brand-500/20"><span>MD SHAHID</span>
+
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#about" class="text-slate-300 hover:text-brand-400 transition-colors">About</a>
+        <a href="#skills" class="text-slate-300 hover:text-brand-400 transition-colors">Skills</a>
+        <a href="#projects" class="text-slate-300 hover:text-brand-400 transition-colors">Projects</a>
+        <a href="#internship" class="text-slate-300 hover:text-brand-400 transition-colors">Internship</a>
+        <a href="#certifications" class="text-slate-300 hover:text-brand-400 transition-colors">Certifications</a>
+        <a href="#achievements" class="text-slate-300 hover:text-brand-400 transition-colors">Achievements</a>
+        <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-500 text-slate-950 font-semibold hover:bg-brand-400 transition-all duration-200">Contact Me</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white text-xl p-2 focus:outline-none">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-b border-dark-border px-4 pt-2 pb-4 space-y-3 text-sm">
+      <a href="#about" class="block text-slate-300 hover:text-brand-400 py-1">About</a>
+      <a href="#skills" class="block text-slate-300 hover:text-brand-400 py-1">Skills</a>
+      <a href="#projects" class="block text-slate-300 hover:text-brand-400 py-1">Projects</a>
+      <a href="#internship" class="block text-slate-300 hover:text-brand-400 py-1">Internship</a>
+      <a href="#certifications" class="block text-slate-300 hover:text-brand-400 py-1">Certifications</a>
+      <a href="#achievements" class="block text-slate-300 hover:text-brand-400 py-1">Achievements</a>
+      <a href="#contact" class="block text-brand-400 font-semibold py-1">Contact Me</a>
+    </div>
+  </nav>
+
+  <!-- Hero / Personal Introduction -->
+  <section id="about" class="pt-32 pb-20 md:pt-40 md:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span> Open for AI/ML & Tech Opportunities
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-indigo-400">MD SHAHID</span>
+        </h1>
+        <p class="text-xl text-slate-300 font-medium">
+          Computer Science & Engineering Student <span class="text-brand-400">(Specializing in AI & Machine Learning)</span>
+        </p>
+        <p class="text-slate-400 leading-relaxed text-base max-w-2xl">
+         Motivated B.Tech student specializing in Computer Science and Engineering (Artificial Intelligence and Machine Learning), with a strong interest in software development, AI/ML, and cybersecurity. Familiar with academic project development, including Malware Detection, and passionate about applying technical knowledge to solve real-world problems. A quick learner with problem-solving abilities and a willingness to learn new technologies. Seeking an internship or entry-level opportunity to gain practical experience, enhance technical skills, and contribute to organizational growth.
+        </p>
+
+        <!-- Social & Action Links -->
+        <div class="pt-2 flex flex-wrap items-center gap-4">
+          <a href="#projects" class="px-6 py-3 rounded-lg bg-gradient-to-r from-brand-500 to-brand-600 text-slate-950 font-bold hover:brightness-110 transition-all flex items-center gap-2 shadow-lg shadow-brand-500/20">
+            <span>Explore Projects</span>
+            <i class="fa-solid fa-arrow-down text-sm"></i>
+          </a>
+         <a href="resume.pdf" target="_blank" rel="noopener" class="px-6 py-3 rounded-lg bg-dark-card border border-slate-700 hover:border-brand-400 text-white font-medium flex items-center gap-2 transition-all">
+    <i class="fa-solid fa-file-pdf text-brand-400"></i>
+    <span>View Resume / CV</span>
+</a>
+          
+          <div class="flex items-center gap-3 pl-2 border-l border-dark-border">
+          <a href="https://github.com/sm510995" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-dark-card border border-slate-700 hover:border-brand-400 flex items-center justify-center text-white transition-all">
+  <i class="fa-brands fa-github text-lg"></i>
+</a>
+           <a href="https://www.linkedin.com/in/mdshahid-ai/" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-dark-card border border-slate-700 hover:border-brand-400 flex items-center justify-center text-white transition-all">
+  <i class="fa-brands fa-linkedin-in text-lg"></i>
+</a>
+           <a href="mailto:sm510995@gmail.com" class="w-10 h-10 rounded-lg bg-dark-card border border-slate-700 hover:border-brand-400 flex items-center justify-center text-white transition-all">
+  <i class="fa-solid fa-envelope text-lg"></i>
+</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avatar Visual / Profile Photo Slot -->
+<div class="lg:col-span-5 flex flex-col items-center justify-center">
+  <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full p-1 bg-gradient-to-tr from-brand-500 to-indigo-500 shadow-2xl shadow-brand-500/10">
+    <div class="w-full h-full rounded-full overflow-hidden bg-dark-card border-4 border-dark-bg">
+      <img id="profile-img-element" src="profile.jpeg" alt="MD SHAHID Profile" class="w-full h-full object-cover">
+    </div>
+  </div>
+</div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills" class="py-20 border-t border-dark-border bg-dark-bg/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Technical Proficiency</h2>
+        <p class="text-3xl font-extrabold text-white">Skills & Technologies</p>
+      </div>
+
+      <!-- Skills & Technologies Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+  <!-- 1. Programming Languages -->
+  <div class="bg-dark-card p-6 rounded-xl border border-slate-700/80 hover:border-brand-400/50 transition-all">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400">
+        <i class="fa-solid fa-code text-lg"></i>
+      </div>
+      <h3 class="text-xl font-bold text-white">Programming Languages</h3>
+    </div>
+    <ul class="space-y-2.5 text-slate-300 text-sm">
+      <li class="flex items-center justify-between">
+        <span><i class="fa-brands fa-python text-brand-400 mr-2"></i> Python</span>
+        <span class="text-xs px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 font-medium">Advanced</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-c text-brand-400 mr-2"></i> C / C++</span>
+        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-medium">Core</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-brands fa-java text-brand-400 mr-2"></i> Java</span>
+        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-medium">Proficient</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-brands fa-js text-brand-400 mr-2"></i> JavaScript</span>
+        <span class="text-xs px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 font-medium">Proficient</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-database text-brand-400 mr-2"></i> SQL</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 2. AI & Machine Learning -->
+  <div class="bg-dark-card p-6 rounded-xl border border-slate-700/80 hover:border-brand-400/50 transition-all">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400">
+        <i class="fa-solid fa-brain text-lg"></i>
+      </div>
+      <h3 class="text-xl font-bold text-white">AI & Machine Learning</h3>
+    </div>
+    <ul class="space-y-2.5 text-slate-300 text-sm">
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-fire text-brand-400 mr-2"></i> PyTorch</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-table text-brand-400 mr-2"></i> Pandas & NumPy</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-chart-line text-brand-400 mr-2"></i> Regression Models</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 3. Deep Learning & NLP -->
+  <div class="bg-dark-card p-6 rounded-xl border border-slate-700/80 hover:border-brand-400/50 transition-all">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400">
+        <i class="fa-solid fa-network-wired text-lg"></i>
+      </div>
+      <h3 class="text-xl font-bold text-white">Deep Learning & NLP</h3>
+    </div>
+    <ul class="space-y-2.5 text-slate-300 text-sm">
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-wand-magic-sparkles text-brand-400 mr-2"></i> LLMs & Embeddings</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-eye text-brand-400 mr-2"></i> Vision Transformers</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-microchip text-brand-400 mr-2"></i> ANN & CNN Architectures</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 4. Full-Stack Web Development -->
+  <div class="bg-dark-card p-6 rounded-xl border border-slate-700/80 hover:border-brand-400/50 transition-all">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400">
+        <i class="fa-solid fa-globe text-lg"></i>
+      </div>
+      <h3 class="text-xl font-bold text-white">Web Development</h3>
+    </div>
+    <ul class="space-y-2.5 text-slate-300 text-sm">
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-layer-group text-brand-400 mr-2"></i> Full-Stack (Frontend & Backend)</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-brands fa-react text-brand-400 mr-2"></i> React.js</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-brands fa-html5 text-brand-400 mr-2"></i> HTML5 & CSS3</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 5. Databases, Tools & IoT -->
+  <div class="bg-dark-card p-6 rounded-xl border border-slate-700/80 hover:border-brand-400/50 transition-all">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400">
+        <i class="fa-solid fa-database text-lg"></i>
+      </div>
+      <h3 class="text-xl font-bold text-white">Databases, Tools & IoT</h3>
+    </div>
+    <ul class="space-y-2.5 text-slate-300 text-sm">
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-server text-brand-400 mr-2"></i> MySQL & PostgreSQL</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-leaf text-brand-400 mr-2"></i> MongoDB</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-brands fa-git-alt text-brand-400 mr-2"></i> Git & GitHub</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-wifi text-brand-400 mr-2"></i> Internet of Things (IoT)</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-code text-brand-400 mr-2"></i> VS Code</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 6. CS Fundamentals -->
+  <div class="bg-dark-card p-6 rounded-xl border border-slate-700/80 hover:border-brand-400/50 transition-all">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400">
+        <i class="fa-solid fa-graduation-cap text-lg"></i>
+      </div>
+      <h3 class="text-xl font-bold text-white">CS Fundamentals</h3>
+    </div>
+    <ul class="space-y-2.5 text-slate-300 text-sm">
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-diagram-project text-brand-400 mr-2"></i> Data Structures & Algorithms</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-cubes text-brand-400 mr-2"></i> OOP Principles</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-table text-brand-400 mr-2"></i> DBMS (Database Mgmt)</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-microchip text-brand-400 mr-2"></i> Operating Systems</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span><i class="fa-solid fa-network-wired text-brand-400 mr-2"></i> Computer Networks</span>
+      </li>
+    </ul>
+  </div>
+
+</div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Projects Section -->
+<section id="projects" class="py-20 border-t border-dark-border bg-dark-bg/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Portfolio Showcase</h2>
+        <p class="text-3xl font-extrabold text-white">Featured Projects</p>
+      </div>
+      <p class="text-slate-400 text-sm mt-2 md:mt-0 max-w-md">
+        Live platforms and research-oriented cybersecurity and AI projects crafted with performance in mind.
+      </p>
+    </div>
+
+    <!-- 2 Columns Grid: Half Left, Half Right -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- Left Card: Project 1 (Aapka Local Yatri) -->
+      <div class="-dark-card border border-dark-border rounded-xl overflow-hidden hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <!-- Project Banner Header -->
+          <div class="w-full h-48 bg-dark-bg border-b border-dark-border relative flex items-center justify-center overflow-hidden group">
+            <h3 class="text-xl font-bold text-slate-200">Aapka Local Yatri Preview</h3>
+            <div class="absolute top-3 right-3">
+              <span class="px-3 py-1 rounded-full bg-brand-500/90 text-slate-950 font-bold text-xs shadow">Live Web Application</span>
+            </div>
+          </div>
+          <!-- Details -->
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-white mb-2">Aapka Local Yatri</h3>
+            <p class="text-sm text-slate-400 mb-4 leading-relaxed">
+              A responsive, transit fare calculation platform enabling local commuters to estimate journey expenses, view optimal transit routes, and compute dynamic tariffs seamless across mobile and desktop interfaces.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2.5 py-1 rounded bg-dark-bg text-xs font-mono text-slate-300 border border-dark-border">HTML5</span>
+              <span class="px-2.5 py-1 rounded bg-dark-bg text-xs font-mono text-slate-300 border border-dark-border">CSS3 / Flexbox</span>
+              <span class="px-2.5 py-1 rounded bg-dark-bg text-xs font-mono text-slate-300 border border-dark-border">JavaScript</span>
+              <span class="px-2.5 py-1 rounded bg-dark-bg text-xs font-mono text-slate-300 border border-dark-border">GitHub Pages</span>
+            </div>
+          </div>
+        </div>
+        <!-- Footer Links -->
+        <div class="px-6 py-4 bg-dark-bg/60 border-t border-dark-border flex items-center justify-between">
+          <a href="https://github.com/sm510995/Aapka-Local-Yatri" target="_blank" rel="noopener" class="text-sm font-semibold text-slate-300 hover:text-brand-400 flex items-center gap-2 transition-all">
+            <i class="fa-brands fa-github text-base"></i> GitHub Repo
+          </a>
+          <a href="https://sm510995.github.io/Aapka-Local-Yatri/" target="_blank" rel="noopener" class="text-sm font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1 transition-all">
+            Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Card: Project 2 (ViT + CNN Malware Detection) -->
+      <div class="bg-dark-card border border-dark-border rounded-xl overflow-hidden hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <!-- Project Banner Header -->
+          <div class="w-full h-48 bg-dark-bg border-b border-dark-border relative flex items-center justify-center overflow-hidden group">
+            <h3 class="text-xl font-bold font-mono text-purple-300">ViT + CNN Malware Detection</h3>
+            <div class="absolute top-3 right-3">
+              <span class="px-3 py-1 rounded-full bg-purple-500/90 text-white font-bold text-xs shadow">AI & Cybersecurity Research</span>
+            </div>
+          </div>
+          <!-- Details -->
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-white mb-2">Hybrid Vision Transformer Malware Detection</h3>
+            <p class="text-sm text-slate-400 mb-4 leading-relaxed">
+              Designed a deep learning pipeline utilizing Vision Transformers (ViT) paired with Convolutional Neural Network (CNN) backbones to convert byte vectors into visual signatures for accurate malware classification.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2.5 py-1 rounded bg-dark-bg text-xs font-mono text-slate-300 border border-dark-border">Python</span>
+              <span class="px-2.5 py-1 rounded bg-dark-bg text-xs font-mono text-slate-300 border border-dark-border">PyTorch / TensorFlow</span>
+              <span class="px-2.5 py-1 rounded bg-dark-bg text-xs font-mono text-slate-300 border border-dark-border">Vision Transformers</span>
+              <span class="px-2.5 py-1 rounded bg-dark-bg text-xs font-mono text-slate-300 border border-dark-border">CNN</span>
+            </div>
+          </div>
+        </div>
+       <!-- Footer Links for Project 2 -->
+<div class="px-6 py-4 bg-dark-bg/60 border-t border-dark-border flex items-center justify-between">
+  <a href="https://github.com/sm510995/Malware-Detection-CNN-ViT" target="_blank" rel="noopener" class="text-sm font-semibold text-slate-300 hover:text-brand-400 flex items-center gap-2 transition-all">
+    <i class="fa-brands fa-github text-base"></i> GitHub Code
+  </a>
+</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  </section>
+
+  <!-- Internship Experience Section -->
+<section id="internships" class="py-20 border-t border-dark-border bg-dark-bg/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Practical Experience</h2>
+        <p class="text-3xl font-extrabold text-white">Internship Experience</p>
+      </div>
+      <p class="text-slate-400 text-sm mt-2 md:mt-0 max-w-md">
+        Professional technical internships completed in Artificial Intelligence and Python Programming.
+      </p>
+    </div>
+
+    <!-- 2 Columns Grid: Left (AI) & Right (Python / IIT BHU) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- Left Card: Artificial Intelligence (InternMitra) -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <h3 class="text-xl font-bold text-white">Artificial Intelligence Intern</h3>
+              <p class="text-brand-400 font-medium text-sm">InternMitra Technologies</p>
+            </div>
+            <div class="text-right">
+              <span class="px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 font-bold text-xs border border-brand-500/20 inline-block mb-1">6-Week Internship</span>
+              <p class="text-xs text-slate-400 font-mono">2026-04 – 2026-05</p>
+            </div>
+          </div>
+          <ul class="space-y-2.5 text-slate-300 text-sm mb-6">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-brand-400 mt-1"></i>
+              <span>Completed an intensive 6-week online internship specializing in Artificial Intelligence principles.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-brand-400 mt-1"></i>
+              <span>Mastered foundational AI concepts, dataset preprocessing, and algorithm evaluation techniques through practical assignments.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-brand-400 mt-1"></i>
+              <span>Built and evaluated supervised learning models on real-world datasets to solve classification problems.</span>
+            </li>
+          </ul>
+        </div>
+        <!-- Certificate Upload / View Slot -->
+        <div class="pt-4 border-t border-dark-border">
+          <!-- AI Internship Certificate Button -->
+<a href="https://www.internmitra.com/certificates/im-2026-1059" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-sm font-semibold">
+  <i class="fa-solid fa-certificate text-brand-400"></i> View AI Internship Certificate
+</a>
+        </div>
+      </div>
+
+      <!-- Right Card: Python Programming (EiSystem Services / IIT BHU) -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <h3 class="text-xl font-bold text-white">Python Programming Intern</h3>
+              <p class="text-brand-400 font-medium text-sm">EiSystem Services (in collaboration with IIT BHU)</p>
+            </div>
+            <div class="text-right">
+              <span class="px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 font-bold text-xs border border-brand-500/20 inline-block mb-1">4-Week Internship</span>
+              <p class="text-xs text-slate-400 font-mono">2025-06 – 2025-06</p>
+            </div>
+          </div>
+          <ul class="space-y-2.5 text-slate-300 text-sm mb-6">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-brand-400 mt-1"></i>
+              <span>Completed a 4-week online internship program conducted by EiSystem Services in collaboration with IIT BHU.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-brand-400 mt-1"></i>
+              <span>Gained strong practical experience in software development fundamentals, core algorithms, and problem-solving techniques.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-brand-400 mt-1"></i>
+              <span>Engineered a robust scientific calculator in Python featuring an intuitive user interface and reliable algorithmic processing for complex calculations.</span>
+            </li>
+          </ul>
+        </div>
+        <!-- Certificate Upload / View Slot -->
+        <div class="pt-4 border-t border-dark-border">
+         <!-- Python Internship Certificate Button -->
+<a href="https://drive.google.com/file/d/1c5IKlG0vnuz_w5ESDvLVMFl3Mjjs1XXi/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-sm font-semibold">
+  <i class="fa-solid fa-certificate text-brand-400"></i> View Python Internship Certificate
+</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  <!-- Certifications & Credentials Section -->
+<section id="certifications" class="py-20 border-t border-dark-border bg-dark-bg/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Verified Qualifications</h2>
+        <p class="text-3xl font-extrabold text-white">Certifications & Credentials</p>
+      </div>
+      <p class="text-slate-400 text-sm mt-2 md:mt-0 max-w-md">
+        All certificates are verifiable. Click any credential below to view the official verification link.
+      </p>
+    </div>
+
+    <!-- 3-Column Grid Layout (Matching Skills Section Style) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Certificate 1: Cisco Intro to Networks -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+              <i class="fa-solid fa-network-wired text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Cisco Academy</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Introduction to Networks</h3>
+          <p class="text-slate-400 text-sm mb-6">CISCO Networking Academy credential covering core networking concepts and topologies.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1gbRicCoal4VX9XMYa7rBIBkWEO6DuKlE/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 2: IBM SkillsBuild LLM -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+              <i class="fa-solid fa-brain text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">IBM SkillsBuild</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Introduction to Large Language Models</h3>
+          <p class="text-slate-400 text-sm mb-6">Completed structured modules on foundational LLM architectures and generative applications.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1gWVw1Z0gevwWj7pNRRZ2m0elnhzjbpmX/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 3: Cisco Python Essentials 1 -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+              <i class="fa-brands fa-python text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Cisco Academy</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Python Essentials 1</h3>
+          <p class="text-slate-400 text-sm mb-6">Foundational Python programming syntax, data types, and logical control structures.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1UV8Hh8E4kBvLyNS2Cx-Zy1hA3Z8RIXWb/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 4: Spoken Tutorial C-Training -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+              <i class="fa-solid fa-code text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Spoken Tutorial</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">C-Training</h3>
+          <p class="text-slate-400 text-sm mb-6">Completed training and assessment in procedural programming using C language.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1nBVVQEBa7iOSqgH9oZ60-SKLMl5wxtaQ/view?usp=drivesdk" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 5: Spoken Tutorial HTML -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+              <i class="fa-solid fa-globe text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Spoken Tutorial</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">HTML Web Development</h3>
+          <p class="text-slate-400 text-sm mb-6">Trained in structuring modern web pages using HTML markup fundamentals.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1XC6U5VlKLj6yG2r2hxbhZ9zGUE06u0Hv/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 6: Spoken Tutorial Python 3.4.3 -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+              <i class="fa-brands fa-python text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Spoken Tutorial</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Python 3.4.3 Certification</h3>
+          <p class="text-slate-400 text-sm mb-6">Completed formal course curriculum and test evaluation in Python scripting.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1gYOcpRLYnFUQKkhgQv3fft5LRmGnq7pe/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 7: NPTEL Soft Skills -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+              <i class="fa-solid fa-award text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">NPTEL Online Certification</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">NPTEL Soft Skills</h3>
+          <p class="text-slate-400 text-sm mb-6">Professional certification focusing on communication, interpersonal, and corporate skills.</p>
+        </div>
+        <div>
+          <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/109/noc25-hs159/Course/NPTEL25HS159S46610158410879711.pdf" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 8: GradGuru Innovation -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+              <i class="fa-solid fa-chalkboard-user text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">GradGuru Innovation</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Career Guidance Webinar</h3>
+          <p class="text-slate-400 text-sm mb-6">Participated in expert career development and professional growth seminar sessions.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1i9UQoYzJjJTXdjTpxGO_CS0KMC1hLkWe/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  <!-- Achievements & Activities Section -->
+  <!-- Certifications & Credentials Section -->
+<section id="certifications" class="py-20 border-t border-dark-border bg-dark-bg/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Verified Qualifications</h2>
+        <p class="text-3xl font-extrabold text-white">Certifications & Credentials</p>
+      </div>
+      <p class="text-slate-400 text-sm mt-2 md:mt-0 max-w-md">
+        All certificates are verifiable. Click any credential below to view the official verification link.
+      </p>
+    </div>
+
+    <!-- 3-Column Grid Layout for Certifications -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+      <!-- Certificate 1: Cisco Intro to Networks -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+              <i class="fa-solid fa-network-wired text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Cisco Academy</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Introduction to Networks</h3>
+          <p class="text-slate-400 text-sm mb-6">CISCO Networking Academy credential covering core networking concepts and topologies.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1gbRicCoal4VX9XMYa7rBIBkWEO6DuKlE/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 2: IBM SkillsBuild LLM -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+              <i class="fa-solid fa-brain text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">IBM SkillsBuild</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Introduction to Large Language Models</h3>
+          <p class="text-slate-400 text-sm mb-6">Completed structured modules on foundational LLM architectures and generative applications.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1gWVw1Z0gevwWj7pNRRZ2m0elnhzjbpmX/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 3: Cisco Python Essentials 1 -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <i class="fa-brands fa-python text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Cisco Academy</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Python Essentials 1</h3>
+          <p class="text-slate-400 text-sm mb-6">Foundational Python programming syntax, data types, and logical control structures.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1UV8Hh8E4kBvLyNS2Cx-Zy1hA3Z8RIXWb/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 4: Spoken Tutorial C-Training -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <i class="fa-solid fa-terminal text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Spoken Tutorial</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">C-Training</h3>
+          <p class="text-slate-400 text-sm mb-6">Completed training and assessment in procedural programming using C language.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1nBVVQEBa7iOSqgH9oZ60-SKLMl5wxtaQ/view?usp=drivesdk" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 5: Spoken Tutorial HTML -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400">
+              <i class="fa-solid fa-code text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Spoken Tutorial</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">HTML Web Development</h3>
+          <p class="text-slate-400 text-sm mb-6">Trained in structuring modern web pages using HTML markup fundamentals.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1XC6U5VlKLj6yG2r2hxbhZ9zGUE06u0Hv/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 6: Spoken Tutorial Python 3.4.3 -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <i class="fa-brands fa-python text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Spoken Tutorial</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Python 3.4.3 Certification</h3>
+          <p class="text-slate-400 text-sm mb-6">Completed formal course curriculum and test evaluation in Python scripting.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1gYOcpRLYnFUQKkhgQv3fft5LRmGnq7pe/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 7: NPTEL Soft Skills -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+              <i class="fa-solid fa-award text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">NPTEL Certification</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">NPTEL Soft Skills</h3>
+          <p class="text-slate-400 text-sm mb-6">Professional certification focusing on communication, interpersonal, and corporate skills.</p>
+        </div>
+        <div>
+          <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/109/noc25-hs159/Course/NPTEL25HS159S46610158410879711.pdf" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Certificate 8: GradGuru Innovation -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+              <i class="fa-solid fa-chalkboard-user text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">GradGuru Innovation</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Career Guidance Webinar</h3>
+          <p class="text-slate-400 text-sm mb-6">Participated in expert career development and professional growth seminar sessions.</p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1i9UQoYzJjJTXdjTpxGO_CS0KMC1hLkWe/view" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-xs font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+   
+
+<!-- Achievements & Extracurriculars Section (Core Honors) -->
+<section id="achievements" class="py-20 border-t border-dark-border bg-dark-bg/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Recognitions</h2>
+        <p class="text-3xl font-extrabold text-white">Achievements & Honors</p>
+      </div>
+     <p class="text-slate-400 text-sm mt-2 md:mt-0 max-w-md text-right">
+  Academic excellence and institutional recognition.
+</p>
+    </div>
+
+    <!-- 2 Columns Grid for Major Honors -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- Achievement 1: NPTEL Silver Elite Certification -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-slate-400/10 border border-slate-400/20 flex items-center justify-center text-slate-300">
+              <i class="fa-solid fa-medal text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">NPTEL Online Certification</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">NPTEL Soft Skills - Silver Elite</h3>
+          <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+            Successfully completed the 12-week NPTEL course certified by IIT Roorkee, achieving a consolidated score of <strong class="text-white">75%</strong> and earning the prestigious <strong class="text-slate-200">Silver Elite</strong> badge.
+          </p>
+        </div>
+        <div>
+          <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/109/noc25-hs159/Course/NPTEL25HS159S46610158410879711.pdf" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-sm font-semibold">
+            <i class="fa-solid fa-certificate text-brand-400"></i> View NPTEL Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- Achievement 2: College Topper / Merit Award -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-brand-500/40 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <i class="fa-solid fa-trophy text-lg"></i>
+            </div>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Government Engineering College, Jamui</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">College Topper - Merit Award</h3>
+          <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+            Awarded the student merit incentive prize (<strong class="text-white">मेधावी छात्र प्रोत्साहन पुरस्कार</strong>) for securing the <strong class="text-amber-400">1st Rank (प्रथम स्थान)</strong> across B.Tech CSE (AI & ML) in university examinations.
+          </p>
+        </div>
+        <div>
+          <a href="https://drive.google.com/file/d/1tKJi-kHY9wr3l8LjuaSYycUrXU_QmhY_/view?usp=drivesdk" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-dark-bg border border-dark-border text-slate-300 hover:text-brand-400 hover:border-brand-500/40 transition-all text-sm font-semibold">
+            <i class="fa-solid fa-certificate text-brand-400"></i> View Merit Award Certificate
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Contact Details Section -->
+   
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Get In Touch</h2>
+        <p class="text-3xl font-extrabold text-white">Contact-MD SHAHID</p>
+        <p class="text-slate-400 text-sm mt-3">
+          "Drop a message for collaborations, internships, or any questions."<section id="contact"h out for internship opportunities, technical collaborations, or general inquiries.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Contact Cards Column -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <div class="bg-dark-card border border-dark-border rounded-xl p-5 flex items-center gap-4 hover:border-brand-500/40 transition-all">
+            <div class="w-12 h-12 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="overflow-hidden">
+              <span class="text-xs text-slate-400 font-medium">Email Address</span>
+              <div class="flex items-center gap-2">
+               <a href="mailto:sm510995@gmail.com" id="email-text" class="text-sm font-semibold text-white hover:text-brand-400 truncate">
+  sm510995@gmail.com
+</a>
+                <button onclick="copyEmail()" title="Copy Email" class="text-xs text-slate-500 hover:text-brand-400 transition-colors">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-dark-card border border-dark-border rounded-xl p-5 flex items-center gap-4 hover:border-brand-500/40 transition-all">
+            <div class="w-12 h-12 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 font-medium">Location</span>
+              <p class="text-sm font-semibold text-white">Jamui, Bihar, India</p>
+            </div>
+          </div>
+
+          <div class="bg-dark-card border border-dark-border rounded-xl p-5 flex items-center gap-4 hover:border-brand-500/40 transition-all">
+            <div class="w-12 h-12 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 font-medium">Social Connections</span>
+             <div class="flex items-center gap-2 mt-1">
+  <a href="https://github.com/sm510995" target="_blank" class="text-sm font-semibold text-slate-300 hover:text-brand-400 flex items-center gap-1 transition-colors">
+    <i class="fa-brands fa-github"></i> GitHub
+  </a>
+  <span class="text-dark-border">|</span>
+  <a href="https://www.linkedin.com/in/mdshahid-ai/" target="_blank" class="text-sm font-semibold text-slate-300 hover:text-brand-400 flex items-center gap-1 transition-colors">
+    <i class="fa-brands fa-linkedin"></i> LinkedIn
+  </a>
+</div>
+            </div>
+          </div>
+
+        </div>
+
+      <!-- Quick Form -->
+<div class="lg:col-span-7 bg-dark-card border border-dark-border rounded-xl p-6">
+  
+  <form action="https://script.google.com/macros/s/AKfycbwJfexnCw_SHZMZulX2qD0ZbfPMjQIwp92UrgUPhFJuk5qWskhnYkRhHL8ijjnOkzripw/exec" method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="space-y-4">
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-medium text-slate-300 mb-1.5">Your Name</label>
+        <input type="text" name="name" required placeholder="Md Shahid" class="w-full bg-slate-900/60 border border-slate-700/80 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition" />
+      </div>
+      <div>
+        <label class="block text-xs font-medium text-slate-300 mb-1.5">Your Email</label>
+        <input type="email" name="email" required placeholder="sm510995@gmail.com" class="w-full bg-slate-900/60 border border-slate-700/80 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition" />
+      </div>
+    </div>
+
+    <div>
+      <label class="block text-xs font-medium text-slate-300 mb-1.5">Subject</label>
+      <input type="text" name="subject" required placeholder="Internship Opportunity / Inquiry" class="w-full bg-slate-900/60 border border-slate-700/80 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition" />
+    </div>
+
+    <div>
+      <label class="block text-xs font-medium text-slate-300 mb-1.5">Message</label>
+      <textarea rows="4" name="message" required placeholder="Write your message here..." class="w-full bg-slate-900/60 border border-slate-700/80 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition"></textarea>
+    </div>
+
+    <button type="submit" class="w-full py-3 rounded-lg bg-cyan-500 text-slate-950 font-medium hover:bg-cyan-400 transition cursor-pointer">
+      Send Message
+    </button>
+  </form>
+
+  <!-- Hidden Iframe taaki page refresh na ho aur data seedha Google Sheet mein chala jaye -->
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { alert('Thank you! Your message has been sent successfully.'); location.reload(); }"></iframe>
+  <script type="text/javascript">
+    var submitted = false;
+  </script>
+
+</div>
+<!-- Hidden Iframe taaki page refresh na ho aur data seedha Google Sheet mein chala jaye -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { alert('Thank you! Your message has been sent successfully.'); location.reload(); }"></iframe>
+<script type="text/javascript">
+  var submitted = false;
+</script>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+ <!-- Footer Section -->
+<footer class="py-12 border-t border-dark-border bg-dark-bg/90 text-slate-400 text-xs tracking-wider uppercase">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+    
+    <!-- Left: Personal Brand & College Info -->
+    <div class="text-center md:text-left space-y-1">
+      <p class="font-bold text-white tracking-widest">MD SHAHID</p>
+      <p class="text-[10px] text-slate-500 lowercase font-mono">GEC Jamui • Computer Science & AI/ML </p>
+    </div>
+
+    <!-- Middle: Minimalist Social Links (Reference Style) -->
+    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-mono text-[11px] normal-case">
+      <a href="https://github.com/sm510995" target="_blank" class="hover:text-brand-400 transition-colors">GitHub</a>
+      <span class="text-dark-border">•</span>
+      <a href="https://www.linkedin.com/in/mdshahid-ai/" target="_blank" class="hover:text-brand-400 transition-colors">LinkedIn</a>
+      <span class="text-dark-border">•</span>
+      <a href="https://www.instagram.com/shahid_sheikh_84/ target="_blank" class="hover:text-brand-400 transition-colors">Instagram</a>
+      <span class="text-dark-border">•</span>
+      <a href="mailto:sm510995@gmail.com" class="hover:text-brand-400 transition-colors">Email</a>
+    </div>
+
+    <!-- Right: Unique Tagline & AI Bot Vibe -->
+    <div class="text-center md:text-right font-serif lowercase italic text-brand-400/80 text-xs">
+      "Building the future with Python & AI."
+    </div>
+
+  </div>
+</footer>
+
+<!-- Floating AI Assistant Badge (Bottom-Right Corner) -->
+<div class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-dark-card/90 backdrop-blur-md border border-brand-500/30 px-4 py-2.5 rounded-full shadow-2xl shadow-brand-500/20 cursor-pointer hover:border-brand-400 hover:scale-105 transition-all group">
+  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+  <i class="fa-solid fa-robot text-brand-400 text-sm group-hover:rotate-12 transition-transform"></i>
+  <span class="text-xs font-mono text-white tracking-wide">AI Assistant Active</span>
+</div>
+
+  <!-- Modal 1: Internship Certificate Viewer -->
+  <div id="intern-cert-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-dark-card border border-dark-border rounded-xl max-w-lg w-full p-6 relative">
+      <button onclick="closeModal('intern-cert-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+      <div class="text-center">
+  <!-- Universal Certificate Image Viewer Modal -->
+  <div id="cert-viewer-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-dark-card border border-dark-border rounded-xl max-w-4xl w-full p-6 relative flex flex-col max-h-[90vh]">
+      <div class="flex items-center justify-between pb-4 border-b border-dark-border">
+        <h3 id="cert-modal-title" class="text-lg font-bold text-white">Certificate Viewer</h3>
+        <button onclick="closeModal('cert-viewer-modal')" class="text-slate-400 hover:text-white text-xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="flex-1 overflow-auto py-4 flex items-center justify-center">
+        <!-- CERTIFICATE IMAGE PREVIEW SLOT -->
+        <img id="cert-modal-img" src="" alt="Certificate Full Preview" class="max-w-full max-h-[65vh] object-contain rounded border border-dark-border shadow-2xl">
+      </div>
+      <div class="pt-3 border-t border-dark-border flex justify-between items-center text-xs text-slate-400">
+        <span><i class="fa-solid fa-circle-info text-brand-400"></i> Press Esc or click Close to return</span>
+        <button onclick="closeModal('cert-viewer-modal')" class="px-4 py-2 rounded bg-dark-bg border border-dark-border text-slate-200 hover:border-brand-400 font-semibold">
+          Close Preview
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Malware Architecture Modal -->
+  <div id="malware-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-dark-card border border-dark-border rounded-xl max-w-lg w-full p-6 relative">
+      <button onclick="closeModal('malware-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center mx-auto mb-3 text-xl">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">Hybrid ViT + CNN Malware Model</h3>
+        <p class="text-xs text-purple-400 font-medium mb-4">Architecture & Technical Blueprint</p>
+        
+        <div class="bg-dark-bg border border-dark-border rounded-lg p-4 my-4 text-left space-y-2 text-xs text-slate-300">
+          <p class="font-semibold text-white border-b border-dark-border pb-1">Pipeline Highlights:</p>
+          <p>1. <strong>Byte-to-Image Mapping:</strong> Converts raw binary/executable streams into 2D grayscale representations.</p>
+          <p>2. <strong>CNN Local Feature Extraction:</strong> Captures spatial malware signatures across local pixel neighborhoods.</p>
+          <p>3. <strong>Vision Transformer Attention:</strong> Computes self-attention across image patches to detect global obfuscations.</p>
+        </div>
+        <button onclick="closeModal('malware-modal')" class="px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 text-xs font-semibold hover:border-slate-400">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Resume Viewer Placeholder -->
+  <div id="resume-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-dark-card border border-dark-border rounded-xl max-w-lg w-full p-6 relative">
+      <button onclick="closeModal('resume-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-brand-500/10 text-brand-400 flex items-center justify-center mx-auto mb-3 text-xl">
+          <i class="fa-solid fa-file-pdf"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">MD SHAHID - Curriculum Vitae</h3>
+        <p class="text-xs text-brand-400 font-medium mb-4">CSE (AI & ML) Resume Overview</p>
+        
+        <div class="bg-dark-bg border border-dark-border rounded-lg p-4 my-4 text-left space-y-2 text-xs text-slate-300">
+          <p>📄 <strong>Degree:</strong> B.Tech in Computer Science & Engineering</p>
+          <p>🎓 <strong>Specialization:</strong> Artificial Intelligence & Machine Learning</p>
+          <p>📍 <strong>Location:</strong> Jamui, Bihar, India</p>
+          <p>🛠️ <strong>Key Skills:</strong> Python, C/C++, HTML/CSS, React, ViT, Networking</p>
+        </div>
+        <div class="flex gap-3 justify-center">
+          <a href="#" onclick="alert('Attach your actual resume.pdf file in your VS Code folder!'); return false;" class="px-4 py-2 rounded-lg bg-brand-500 text-slate-950 text-xs font-bold hover:bg-brand-400 transition-colors">
+            Download Full PDF
+          </a>
+          <button onclick="closeModal('resume-modal')" class="px-4 py-2 rounded-lg bg-dark-bg border border-dark-border text-slate-300 text-xs font-semibold hover:border-slate-400">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close Mobile Menu when link clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Preview Local Profile Image Test
+    function previewProfileImage(event) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        const output = document.getElementById('profile-img-element');
+        output.src = reader.result;
+      };
+      if (event.target.files[0]) {
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    }
+
+    // Modal Control Functions
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    // Certificate Image Viewer Loader
+    function openCertViewer(title, imgSrc) {
+      document.getElementById('cert-modal-title').innerText = title;
+      document.getElementById('cert-modal-img').src = imgSrc;
+      openModal('cert-viewer-modal');
+    }
+
+    // Close modals on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal('cert-viewer-modal');
+        closeModal('intern-cert-modal');
+        closeModal('malware-modal');
+        closeModal('resume-modal');
+      }
+    });
+
+    // Clipboard Copy for Email
+    function copyEmail() {
+      const emailText = document.getElementById('email-text').innerText;
+      
+      const tempInput = document.createElement('input');
+      tempInput.value = emailText;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+
+      alert('Email copied to clipboard: ' + emailText);
+    }
+
+  // Contact Form Handler
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const toast = document.getElementById('form-toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+
+    <!-- AI Assistant Floating Badge & Modal Code (Jo aapne paste kiya hai) -->
+    <div onclick="toggleAIChat()" class="...">
+       ...
+    </div>
+
+    <div id="aiChatModal" class="...">
+       ...
+    </div>
+
+    <!-- AI Chat JavaScript -->
+    <script>
+      function toggleAIChat() {
+        const modal = document.getElementById('aiChatModal');
+        if (modal) {
+          modal.classList.toggle('hidden');
+        }
+      }
+
+      function sendAIMessage() {
+        const input = document.getElementById('aiInput');
+        const chatBody = document.querySelector('#aiChatModal .overflow-y-auto');
+        if (!input || !input.value.trim()) return;
+
+        const userMsg = document.createElement('div');
+        userMsg.className = "bg-brand-500/20 text-white p-2.5 rounded-lg rounded-tr-none ml-auto max-w-[85%] text-right";
+        userMsg.innerText = input.value;
+        chatBody.appendChild(userMsg);
+
+        const userText = input.value;
+        input.value = '';
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        setTimeout(() => {
+          const botMsg = document.createElement('div');
+          botMsg.className = "bg-dark-border/40 p-2.5 rounded-lg rounded-tl-none max-w-[85%]";
+          
+          if(userText.toLowerCase().includes('project') || userText.toLowerCase().includes('yatri')) {
+            botMsg.innerText = "MD Shahid ne 'Aapka Local Yatri' web app banaya hai jo GitHub Pages par live hai!";
+          } else if(userText.toLowerCase().includes('contact') || userText.toLowerCase().includes('email')) {
+            botMsg.innerText = "Aap inhein direct email kar sakte hain: sm510995@gmail.com";
+          } else {
+            botMsg.innerText = "Shahid abhi B.Tech CSE (AI & ML) kar rahe hain GEC Jamui se.";
+          }
+          
+          chatBody.appendChild(botMsg);
+          chatBody.scrollTop = chatBody.scrollHeight;
+        }, 600);
+      }
+    </script>
+<!-- 1. Floating AI Assistant Badge (Direct Alert Test ke sath) -->
+    <div onclick="alert('Click ho gaya!'); toggleAIChat();" style="position: fixed !important; bottom: 30px !important; right: 30px !important; z-index: 2147483647 !important; pointer-events: auto !important; cursor: pointer !important;" class="flex items-center gap-2 bg-slate-900 border border-emerald-500 px-4 py-2.5 rounded-full shadow-2xl">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+      <i class="fa-solid fa-robot text-emerald-400 text-sm"></i>
+      <span class="text-xs font-mono text-white tracking-wide">AI Assistant Active</span>
+    </div>
+
+    <!-- 2. AI Chat Popup Modal -->
+    <div id="aiChatModal" style="display: none; position: fixed !important; bottom: 90px !important; right: 30px !important; z-index: 2147483647 !important;" class="w-80 sm:w-96 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+      <!-- Header -->
+      <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-robot text-emerald-400"></i>
+          <span class="text-xs font-mono font-bold text-white">MD Shahid's AI Assistant</span>
+        </div>
+        <button onclick="toggleAIChat()" class="text-slate-400 hover:text-white text-sm px-2 py-1 cursor-pointer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Messages Body -->
+      <div class="p-4 h-64 overflow-y-auto space-y-3 text-xs font-mono text-slate-300 bg-slate-900/50" id="chatBodyContainer">
+        <div class="bg-slate-800 p-2.5 rounded-lg rounded-tl-none max-w-[85%]">
+          Hello! Main MD Shahid ka AI Assistant hoon. Aap inke projects ya GEC Jamui ke baare mein poochh sakte hain.
+        </div>
+      </div>
+
+      <!-- Input Footer -->
+      <div class="p-3 bg-slate-950 border-t border-slate-800 flex gap-2">
+        <input type="text" placeholder="Type a message..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-emerald-400 font-mono" id="aiInput">
+        <button onclick="sendAIMessage()" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 px-3 py-1.5 rounded-lg text-xs font-bold cursor-pointer">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 3. JavaScript Logic -->
+    <script>
+      function toggleAIChat() {
+        const modal = document.getElementById('aiChatModal');
+        if (modal) {
+          if (modal.style.display === 'none' || modal.style.display === '') {
+            modal.style.display = 'flex';
+          } else {
+            modal.style.display = 'none';
+          }
+        }
+      }
+
+      function sendAIMessage() {
+        const input = document.getElementById('aiInput');
+        const chatBody = document.getElementById('chatBodyContainer');
+        if (!input || !input.value.trim()) return;
+
+        // User message
+        const userMsg = document.createElement('div');
+        userMsg.className = "bg-emerald-500/20 text-white p-2.5 rounded-lg rounded-tr-none ml-auto max-w-[85%] text-right font-mono text-xs";
+        userMsg.innerText = input.value;
+        chatBody.appendChild(userMsg);
+
+        const userText = input.value;
+        input.value = '';
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        // Bot reply simulation
+        setTimeout(() => {
+          const botMsg = document.createElement('div');
+          botMsg.className = "bg-slate-800 p-2.5 rounded-lg rounded-tl-none max-w-[85%] font-mono text-xs text-slate-200";
+          
+          if (userText.toLowerCase().includes('project') || userText.toLowerCase().includes('yatri')) {
+            botMsg.innerText = "MD Shahid ne 'Aapka Local Yatri' web app banaya hai jo GitHub Pages par live hai!";
+          } else if (userText.toLowerCase().includes('contact') || userText.toLowerCase().includes('email')) {
+            botMsg.innerText = "Aap inhein direct email kar sakte hain: sm510995@gmail.com";
+          } else {
+            botMsg.innerText = "Shahid abhi B.Tech CSE (AI & ML) kar rahe hain GEC Jamui se.";
+          }
+          
+          chatBody.appendChild(botMsg);
+          chatBody.scrollTop = chatBody.scrollHeight;
+        }, 600);
+      }
+    </script>
+    <!-- Contact Form JavaScript -->
+  <script src="script.js"></script>
+
+  </script> <!-- (Aapka chatbot wala script tag yahan band ho raha hoga) -->
+</body>
+</html>
+  </body>
+</html>
